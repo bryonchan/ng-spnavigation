@@ -1,0 +1,4 @@
+<li is-open="status.isOpen" class="dropdown" uib-dropdown ng-mouseover="openDropdown()" ng-mouseleave="closeDropdown()" ng-switch on="leaf.get_localCustomProperties()['_Sys_Nav_SimpleLinkUrl']">
+    <a ng-switch-when="" href="#" uib-dropdown-toggle ng-disabled="disabled">{{leaf.get_name()}}</a>
+    <a ng-switch-default ng-href="{{leaf.get_localCustomProperties()['_Sys_Nav_SimpleLinkUrl']}}" ng-disabled="disabled">{{leaf.get_name()}}</a>                                           
+</li>

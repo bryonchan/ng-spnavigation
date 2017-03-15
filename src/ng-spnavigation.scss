@@ -1,0 +1,361 @@
+/**
+ *  If you want to override some bootstrap variables, you have to change values in bootstrap-build.scss.
+ *  The list of variables are listed here bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
+ */
+
+ /*Start Top nav css */
+
+ nav.megamenu {
+
+    //background-color: darken($debug, 20%);        // remove
+    max-width: 1440px;
+    margin-bottom: 10px;
+
+    .navbar-collapse {
+
+        padding: {
+            left: 0;
+            right: 0;
+        }
+
+        .navbar-nav { 
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+            color: #000;
+
+            .columnified ul.menu-list{
+                column-width: 210px;
+                column-gap: 0;
+                column-rule: solid 1px #d8d8d8;
+                break-after: avoid-column;
+            }
+
+            > li > div > ul > li > ul > li > ul {
+                display: none;
+            }
+
+            > li:first-child:before, > li:after {
+                content: " ";
+                display: table;
+                background-color: #e6e6e6;
+                width: 0.0625rem*$nav-rem-multiplier;
+                height: 2.5rem*$nav-rem-multiplier;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            > li:after {
+                right: 0;
+                left: auto;
+            }
+
+            > li {
+                float: none;
+                display: table-cell;
+                text-align: center; 
+            }
+
+
+             li  a {
+                line-height: 2.5rem*$nav-rem-multiplier;
+                letter-spacing: 0.1875rem*$nav-rem-multiplier;
+
+                padding: 0;
+                text-align: center;
+                color: #fff;
+
+                &:hover{
+                    background-color: #06d6a0;          // add to global
+                    color: #fff;
+                }
+
+                &:focus{
+                    color: #000;
+                    background-color: #fff;
+                }
+
+
+            }
+
+            > li.open > a {
+                background-color: #06d6a0;          // add to global
+                color: #fff;
+            }
+
+
+            li {
+
+
+                &.dropdown {
+
+                    .dropdown-menu {
+                        margin-top: 1.3125rem*$nav-rem-multiplier;
+
+
+
+                        .menu-list {
+                            padding: 15px 0px;
+                            text-align: left;
+
+                            a {
+                                padding: 0;
+                            } 
+
+
+                            li {
+                               padding-left: 0.625rem;
+                               margin-right: 0.625rem;
+                               padding-right: 0;
+                                
+                                margin-bottom: 15px;
+
+                                 a {
+                                    font-weight: 500;
+                                    line-height: 1.4375rem*$nav-rem-multiplier;
+                                    font-size: 0.75rem*$nav-rem-multiplier;         
+                                    letter-spacing: 0.1725rem*$nav-rem-multiplier;  
+                                    text-align: initial;
+                                    display: block;
+                                    padding: 5px 20px;
+                                    
+
+                                    // if you want to prevent breaks in content
+                                    overflow: hidden;  //fix for Firefox 
+                                    break-inside: avoid-column;
+                                    -webkit-column-break-inside: avoid;
+
+                                    &:hover {
+                                        text-decoration: none;
+                                        
+                                        display: block;
+                                        background-color: #ededed;
+                                        padding-right: 20px;
+                                        padding-left: 20px;
+                                        background-color: #ededed;
+                                        
+                                    }
+                                    
+                                   
+                                }
+
+                                 ul {
+                                    padding-left: 0;
+
+                                    li {
+                                        margin-bottom: 0px;
+                                        padding-left: 0;
+                                        margin-right: 0;
+                                    }
+
+                                    a {
+                                        line-height: 2.25rem*$nav-rem-multiplier;
+                                        font-size: 0.8125rem*$nav-rem-multiplier;
+                                        color: #151515;
+                                        letter-spacing: 0px;
+                                        text-transform: capitalize;
+                                        text-decoration: none;
+                                        font-weight: normal;
+                                        padding-top: 0;
+                                        padding-bottom: 0;
+                                    }
+
+                                     li:last-child {
+                                        margin-bottom: 0.9375rem*$nav-rem-multiplier;
+                                    }
+
+                                }
+                            }
+
+                        }
+
+                        ul {
+                            color: #000;
+                            list-style: none;
+                        }
+
+                    }
+
+                }
+
+                & {
+
+                    text-transform: uppercase;
+                    font-size: (0.75rem*$nav-rem-multiplier);
+
+                    a {
+                        color: inherit;
+                    }           
+                }
+
+            }
+
+            &:before, &:after {
+                display: none;
+            }
+
+
+
+        }
+
+    }
+}
+
+
+@media screen and (max-width: $screen-xs-max) {
+
+  nav.megamenu .nav-pills-justified {
+
+        > li:first-child:before, > li:after {
+            content: initial !important;
+        }
+
+        .dropdown {
+
+            .dropdown-menu {
+                margin-top: 0;
+            }
+        }
+
+        li {
+            display: block !important;
+            line-height: initial !important;
+            height: initial !important;
+
+            a {
+                height: initial !important;
+            }
+
+        }
+
+        &:before, &:after {
+            display: inline !important;
+        }
+    }
+
+}
+
+@media (max-width: $screen-xs-max) {
+
+    nav.megamenu {
+        .navbar-default button.navbar-toggle{
+            margin-left: 0px;
+            margin-right: 10px;
+            border-radius: 0px;
+            
+            padding: 6px 13px 7px;
+            text-transform: uppercase; 
+            
+            span.glyphicon{
+                margin-left: 46px;
+            }
+        }
+
+        .navbar{
+            margin-bottom: 0px; 
+        }
+        .navbar-header {
+            background-position: 6px center;
+            background-repeat: no-repeat;
+            padding: 5px 0px;
+        }
+
+        .navbar-collapse .navbar-nav{
+            margin: 0;
+
+            ul {
+                padding-left: 0px;
+            }
+
+            li {
+                border-right: none;
+                text-align: left;
+
+            }
+
+            li a{
+                border-bottom: solid 1px #e6e6e6;
+            }
+
+             li a, li.dropdown .dropdown-menu .menu-list li a, li.dropdown .dropdown-menu .menu-list li ul li a{
+                display: block;
+                text-align: left;
+                font-size: 0.625rem*$nav-rem-multiplier;
+                letter-spacing: 2.5px;
+                line-height:  0.75rem*$nav-rem-multiplier;
+                padding: 16px 15px 16px 15px;
+
+                &:hover {
+                    color: #000;
+                    background-color: #e6e6e6;
+                }
+
+            }
+
+            li.open > a {
+
+                &:hover { 
+                    background-color: #e6e6e6;
+                    color: #000;
+                }
+
+                &:focus { 
+                    background-color: #fff;
+                    color: #000;
+                }
+            }
+
+            li.dropdown > .dropdown-menu {
+                padding: 0;
+                margin-top: 0px;
+                background-color: #f2f2f2; 
+
+                ul.menu-list {
+                    column-width: auto;
+                    column-count: 1;
+                    padding: 0;
+
+                    li{
+                        padding: 0px;
+                        margin-bottom: 0px;
+
+                        a{
+                            padding-left: 20px;
+                            line-height: normal;                            
+                            border-bottom: solid 1px #fff;
+                        }
+
+                        ul li:last-child {
+                            margin-bottom: 0px;
+                        }
+
+                        ul li a{
+
+                            padding-left: 30px;
+                            text-transform: uppercase;
+
+                            &:hover{
+                                padding-left: 30px;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+          
+        }
+
+        .navbar-collapse.in{
+            overflow-y: hidden;
+        }
+
+
+
+
+    }
+}
+
+/* end top nav css */
+

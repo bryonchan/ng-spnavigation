@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+	<webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+		<metaData>
+			<type name=
+"Microsoft.SharePoint.WebPartPages.ScriptEditorWebPart, Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+			<importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+		</metaData>
+		<data>
+			<properties>
+				<property name="Title" type="string">$Resources:core,ScriptEditorWebPartTitle;</property>
+				<property name="Description" type="string">$Resources:core,ScriptEditorWebPartDescription;</property>
+				<property name="ChromeType" type="chrometype">None</property>
+				<property name="Content" type="string"><![CDATA[
+					<script>
+						var webdotnet = webdotnet || {};
+						var ngSpNavigationSettings = ngSpNavigationSettings || {};
+						ngSpNavigationSettings.debug = true;
+					</script>
+					<script src="//localhost/browser-sync/browser-sync-client.2.12.8.js"></script>
+					<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
+					<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.1/ui-bootstrap-tpls.js"></script>
+					
+
+
+					<!-- bower:js -->
+					<!-- endbower -->
+
+					<!-- inject:srcjs -->
+					<!-- endinject -->
+
+					<!-- inject:css -->
+					<!-- endinject -->
+					
+					 <div id="sandbox-ng-app">
+					        <nav class="navbar center-block megamenu" role="navigation">
+					        	<div class="row center-block">
+								    <div class="navbar-header navbar-default">
+								        <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed" ng-class="{'nav-collapsed': navCollapsed,'nav-expanded': !navCollapsed}">
+										    <span class="sr-only">Toggle navigation</span>
+										    Menu
+										    <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
+										</button>
+								    </div>
+								    <div data-uib-collapse="navCollapsed" class="navbar-collapse">
+								    	<div data-webdotnet-tree data-term-set-name="Global Navigation"></div>
+								    </div>
+								</div>
+					        </nav>
+					     
+					     <div data-ng-controller="ManagedNavigationController" data-term-set-name="Global Footer Navigation">
+					        <div data-webdotnet-plain-tree data-tree="tree"></div>
+					     </div>
+
+					    
+
+					 </div>
+					<script>
+						angular.element(document).ready(function(){
+						angular.bootstrap(document.getElementById("sandbox-ng-app"), ['ngSpNavigation']);
+					});
+						</script>
+					]]></property>
+			</properties>
+		</data>
+	</webPart>
+</webParts>
